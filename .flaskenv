@@ -1,1 +1,2 @@
-FLASK_APP=cardsagainst.py
+FLASK_APP=server.py
+
