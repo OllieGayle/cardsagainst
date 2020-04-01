@@ -20,19 +20,10 @@
     </form>
   </body>
   <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js" integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
-  <script type="text/javascript" charset="utf-8">
-    var socket = io.connect('http://cardsagainst1b.herokuapp.com/', {port: 8000, transport: false})
-    socket.on('connect', function() {
-        socket.emit('connection', {data: 'I\'m connected!'});
-    });
-    socket.on('disconnect', function(){
-        socket.emit('disconnection', {data: 'I\'m disconnected!'});
-    });
-</script>
 <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
 <script>
   $(function () {
-    var socket = io();
+    var socket = io.connect('http://cardsagainst1b.herokuapp.com/', {port: 8000, transport: false});
     $('form').submit(function(e){
       e.preventDefault(); // prevents page reloading
       socket.emit('chat message', $('#m').val());
