@@ -21,8 +21,8 @@ def handle_message(message):
 def handle_message(message):
     emit('chat message', message,broadcast=True)
 
-#if __name__ == '__main__':
-    #socketio.run(app)
+if __name__ == '__main__':
+    socketio.run(app)
 
 
 
